@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例</title>
+</head>
+<body>
+	<script src="js/axios.min.js"></script>
+	<script>
+		//get
+		axios.get('server/user.json',{
+			params: {ID: 12345}
+		})
+		.then(function(response){
+			console.log(response.data.name);//xf
+		})
+		.catch(function(error){
+			console.log(error);
+		});
+
+		//post
+		axios.post('server/product.json',{
+			name: 'TV'
+		})
+		.then(function(response){
+			console.log(response);//xfz
+		})
+		.catch(function(error){
+			console.log(error.message);
+		});
+
+
+
+	</script>
+</body>
+</html>
